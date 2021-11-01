@@ -28,6 +28,7 @@ namespace ProWebBuilder
         public static void initUIStyle(MenuStrip menubar)
         {
             menubar.Renderer = new UIStyle();
+            menubar.BackColor = Color.White;
         }
 
         protected override void OnRenderMenuItemBackground(ToolStripItemRenderEventArgs e)
@@ -43,6 +44,12 @@ namespace ProWebBuilder
                 using (SolidBrush brush = new SolidBrush(selectedBgColor))
                     e.Graphics.FillRectangle(brush, menuItemBackground);
             }
+        }
+
+        protected override void OnRenderImageMargin(ToolStripRenderEventArgs e)
+        {
+            using (SolidBrush brush = new SolidBrush(Color.White))
+                e.Graphics.FillRectangle(brush, e.AffectedBounds);
         }
 
     }

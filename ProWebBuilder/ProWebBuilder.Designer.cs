@@ -71,6 +71,7 @@ namespace ProWebBuilder
             this.ComponentPanelLabel = new System.Windows.Forms.Label();
             this.ComponentList = new System.Windows.Forms.ListView();
             this.NewFileToolbarButton = new System.Windows.Forms.ToolStripButton();
+            this.NewFileSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Menubar.SuspendLayout();
             this.ToolbarPanel.SuspendLayout();
             this.Toolbar.SuspendLayout();
@@ -111,6 +112,7 @@ namespace ProWebBuilder
             // NewSubMenuItem
             // 
             this.NewSubMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NewFileSubMenuItem,
             this.NewCSSFileSubMenuItem,
             this.NewHTMLFileSubMenuItem,
             this.NewProjectFileSubMenuItem});
@@ -439,6 +441,12 @@ namespace ProWebBuilder
             this.NewFileToolbarButton.Size = new System.Drawing.Size(23, 22);
             this.NewFileToolbarButton.Text = "New File";
             // 
+            // NewFileSubMenuItem
+            // 
+            this.NewFileSubMenuItem.Name = "NewFileSubMenuItem";
+            this.NewFileSubMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.NewFileSubMenuItem.Text = "File";
+            // 
             // ProWebBuilder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -451,6 +459,7 @@ namespace ProWebBuilder
             this.Controls.Add(this.ToolboxAndObjectPanel);
             this.Controls.Add(this.ToolbarPanel);
             this.Controls.Add(this.Menubar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.Menubar;
             this.Name = "ProWebBuilder";
             this.Text = "ProWebBuilder";
@@ -516,6 +525,7 @@ namespace ProWebBuilder
         private System.Windows.Forms.ListView ComponentList;
         private System.Windows.Forms.Label ComponentPanelLabel;
         private System.Windows.Forms.ToolStripButton NewFileToolbarButton;
+        private System.Windows.Forms.ToolStripMenuItem NewFileSubMenuItem;
     }
 }
 
