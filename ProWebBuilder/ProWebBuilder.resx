@@ -124,7 +124,7 @@
     <value>137, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="NewFileToolbarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="toolStripButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADDSURBVFhH7dexCcMwAERRreUVMlWWcu0pknUUZL4acyG6
@@ -134,6 +134,18 @@
         YII=
 </value>
   </data>
+  <data name="OpenToolbarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACrSURBVFhHYxgFo4Aa4NOV+g+fbrf/x4mB8lCltAFYLUXD
+        UKXEAWwGUIqhRuMH/59PSvj/fHLDz4e9/6mNQeZC8KQEqHWoAGo5SCEdMBZHACVALsSimCa4AWotAoAE
+        0RTREo86YNQBow4YQQ6w3OoFxmjiow4Yxg6AWUgIQ61FAKDmgXYAbdoDMAtRxfE3SkAhQTWM5ACoGA7L
+        aQVgDoBy6Q8G3AGjYJADBgYAhz9pSqmV3xwAAAAASUVORK5CYII=
+</value>
+  </data>
+  <metadata name="OpenDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>234, 17</value>
+  </metadata>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAICAAAAEAIACoEAAAFgAAACgAAAAgAAAAQAAAAAEAIAAAAAAAABAAABILAAASCwAAAAAAAAAA

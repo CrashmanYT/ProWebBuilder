@@ -33,6 +33,7 @@ namespace ProWebBuilder
             this.Menubar = new System.Windows.Forms.MenuStrip();
             this.FileMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.NewFileSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewCSSFileSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewHTMLFileSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.NewProjectFileSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,6 +42,8 @@ namespace ProWebBuilder
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.SaveSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SaveAsSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.ExitSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.EditMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CutSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CopySubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -54,9 +57,16 @@ namespace ProWebBuilder
             this.AboutSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ToolbarPanel = new System.Windows.Forms.Panel();
             this.Toolbar = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.OpenToolbarButton = new System.Windows.Forms.ToolStripButton();
             this.ToolboxAndObjectPanel = new System.Windows.Forms.Panel();
-            this.ComponentListPanel = new System.Windows.Forms.Panel();
+            this.ToolboxAndComponentSplitter = new System.Windows.Forms.Splitter();
             this.ToolboxPanel = new System.Windows.Forms.Panel();
+            this.ToolboxList = new System.Windows.Forms.ListView();
+            this.ToolboxPanelLabel = new System.Windows.Forms.Label();
+            this.ComponentListPanel = new System.Windows.Forms.Panel();
+            this.ComponentList = new System.Windows.Forms.ListView();
+            this.ComponentPanelLabel = new System.Windows.Forms.Label();
             this.PropertiesPanel = new System.Windows.Forms.Panel();
             this.PropertiesAndExplorerTab = new System.Windows.Forms.TabControl();
             this.PropertiesTab = new System.Windows.Forms.TabPage();
@@ -68,14 +78,12 @@ namespace ProWebBuilder
             this.CodeTab = new System.Windows.Forms.TabPage();
             this.ToolboxSplitter = new System.Windows.Forms.Splitter();
             this.PropertiesSplitter = new System.Windows.Forms.Splitter();
-            this.ComponentPanelLabel = new System.Windows.Forms.Label();
-            this.ComponentList = new System.Windows.Forms.ListView();
-            this.NewFileToolbarButton = new System.Windows.Forms.ToolStripButton();
-            this.NewFileSubMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.OpenDialog = new System.Windows.Forms.OpenFileDialog();
             this.Menubar.SuspendLayout();
             this.ToolbarPanel.SuspendLayout();
             this.Toolbar.SuspendLayout();
             this.ToolboxAndObjectPanel.SuspendLayout();
+            this.ToolboxPanel.SuspendLayout();
             this.ComponentListPanel.SuspendLayout();
             this.PropertiesPanel.SuspendLayout();
             this.PropertiesAndExplorerTab.SuspendLayout();
@@ -104,7 +112,9 @@ namespace ProWebBuilder
             this.OpenProjectSubMenuItem,
             this.toolStripSeparator1,
             this.SaveSubMenuItem,
-            this.SaveAsSubMenuItem});
+            this.SaveAsSubMenuItem,
+            this.toolStripSeparator4,
+            this.ExitSubMenuItem});
             this.FileMenuItem.Name = "FileMenuItem";
             this.FileMenuItem.Size = new System.Drawing.Size(39, 21);
             this.FileMenuItem.Text = "File";
@@ -119,6 +129,12 @@ namespace ProWebBuilder
             this.NewSubMenuItem.Name = "NewSubMenuItem";
             this.NewSubMenuItem.Size = new System.Drawing.Size(199, 22);
             this.NewSubMenuItem.Text = "New";
+            // 
+            // NewFileSubMenuItem
+            // 
+            this.NewFileSubMenuItem.Name = "NewFileSubMenuItem";
+            this.NewFileSubMenuItem.Size = new System.Drawing.Size(197, 22);
+            this.NewFileSubMenuItem.Text = "File";
             // 
             // NewCSSFileSubMenuItem
             // 
@@ -172,6 +188,18 @@ namespace ProWebBuilder
             this.SaveAsSubMenuItem.Size = new System.Drawing.Size(199, 22);
             this.SaveAsSubMenuItem.Text = "Save As";
             // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(196, 6);
+            // 
+            // ExitSubMenuItem
+            // 
+            this.ExitSubMenuItem.Name = "ExitSubMenuItem";
+            this.ExitSubMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.ExitSubMenuItem.Text = "Exit";
+            this.ExitSubMenuItem.Click += new System.EventHandler(this.ExitSubMenuItem_Click);
+            // 
             // EditMenuItem
             // 
             this.EditMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -191,52 +219,52 @@ namespace ProWebBuilder
             // 
             this.CutSubMenuItem.Name = "CutSubMenuItem";
             this.CutSubMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.X)));
-            this.CutSubMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CutSubMenuItem.Size = new System.Drawing.Size(173, 22);
             this.CutSubMenuItem.Text = "Cut";
             // 
             // CopySubMenuItem
             // 
             this.CopySubMenuItem.Name = "CopySubMenuItem";
             this.CopySubMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.C)));
-            this.CopySubMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.CopySubMenuItem.Size = new System.Drawing.Size(173, 22);
             this.CopySubMenuItem.Text = "Copy";
             // 
             // PasteSubMenuItem
             // 
             this.PasteSubMenuItem.Name = "PasteSubMenuItem";
             this.PasteSubMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.V)));
-            this.PasteSubMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.PasteSubMenuItem.Size = new System.Drawing.Size(173, 22);
             this.PasteSubMenuItem.Text = "Paste";
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(170, 6);
             // 
             // UndoSubMenuItem
             // 
             this.UndoSubMenuItem.Name = "UndoSubMenuItem";
             this.UndoSubMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.UndoSubMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.UndoSubMenuItem.Size = new System.Drawing.Size(173, 22);
             this.UndoSubMenuItem.Text = "Undo";
             // 
             // RedoSubMenuItem
             // 
             this.RedoSubMenuItem.Name = "RedoSubMenuItem";
             this.RedoSubMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Y)));
-            this.RedoSubMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.RedoSubMenuItem.Size = new System.Drawing.Size(173, 22);
             this.RedoSubMenuItem.Text = "Redo";
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(170, 6);
             // 
             // SelectAllSubMenuItem
             // 
             this.SelectAllSubMenuItem.Name = "SelectAllSubMenuItem";
             this.SelectAllSubMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.A)));
-            this.SelectAllSubMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.SelectAllSubMenuItem.Size = new System.Drawing.Size(173, 22);
             this.SelectAllSubMenuItem.Text = "Select All";
             // 
             // HelpMenuItem
@@ -250,7 +278,7 @@ namespace ProWebBuilder
             // AboutSubMenuItem
             // 
             this.AboutSubMenuItem.Name = "AboutSubMenuItem";
-            this.AboutSubMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.AboutSubMenuItem.Size = new System.Drawing.Size(111, 22);
             this.AboutSubMenuItem.Text = "About";
             // 
             // ToolbarPanel
@@ -265,16 +293,36 @@ namespace ProWebBuilder
             // Toolbar
             // 
             this.Toolbar.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.NewFileToolbarButton});
+            this.toolStripButton1,
+            this.OpenToolbarButton});
             this.Toolbar.Location = new System.Drawing.Point(0, 0);
             this.Toolbar.Name = "Toolbar";
             this.Toolbar.Size = new System.Drawing.Size(800, 25);
             this.Toolbar.TabIndex = 0;
             this.Toolbar.Text = "toolStrip1";
             // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "New File";
+            // 
+            // OpenToolbarButton
+            // 
+            this.OpenToolbarButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.OpenToolbarButton.Image = ((System.Drawing.Image)(resources.GetObject("OpenToolbarButton.Image")));
+            this.OpenToolbarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.OpenToolbarButton.Name = "OpenToolbarButton";
+            this.OpenToolbarButton.Size = new System.Drawing.Size(23, 22);
+            this.OpenToolbarButton.Text = "New Project";
+            // 
             // ToolboxAndObjectPanel
             // 
             this.ToolboxAndObjectPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.ToolboxAndObjectPanel.Controls.Add(this.ToolboxAndComponentSplitter);
             this.ToolboxAndObjectPanel.Controls.Add(this.ToolboxPanel);
             this.ToolboxAndObjectPanel.Controls.Add(this.ComponentListPanel);
             this.ToolboxAndObjectPanel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -283,24 +331,81 @@ namespace ProWebBuilder
             this.ToolboxAndObjectPanel.Size = new System.Drawing.Size(116, 425);
             this.ToolboxAndObjectPanel.TabIndex = 2;
             // 
+            // ToolboxAndComponentSplitter
+            // 
+            this.ToolboxAndComponentSplitter.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.ToolboxAndComponentSplitter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.ToolboxAndComponentSplitter.Location = new System.Drawing.Point(0, 230);
+            this.ToolboxAndComponentSplitter.Name = "ToolboxAndComponentSplitter";
+            this.ToolboxAndComponentSplitter.Size = new System.Drawing.Size(114, 3);
+            this.ToolboxAndComponentSplitter.TabIndex = 8;
+            this.ToolboxAndComponentSplitter.TabStop = false;
+            // 
+            // ToolboxPanel
+            // 
+            this.ToolboxPanel.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.ToolboxPanel.Controls.Add(this.ToolboxList);
+            this.ToolboxPanel.Controls.Add(this.ToolboxPanelLabel);
+            this.ToolboxPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ToolboxPanel.Location = new System.Drawing.Point(0, 0);
+            this.ToolboxPanel.Name = "ToolboxPanel";
+            this.ToolboxPanel.Size = new System.Drawing.Size(114, 233);
+            this.ToolboxPanel.TabIndex = 0;
+            // 
+            // ToolboxList
+            // 
+            this.ToolboxList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ToolboxList.HideSelection = false;
+            this.ToolboxList.Location = new System.Drawing.Point(0, 17);
+            this.ToolboxList.Name = "ToolboxList";
+            this.ToolboxList.Size = new System.Drawing.Size(114, 216);
+            this.ToolboxList.TabIndex = 0;
+            this.ToolboxList.UseCompatibleStateImageBehavior = false;
+            // 
+            // ToolboxPanelLabel
+            // 
+            this.ToolboxPanelLabel.AutoSize = true;
+            this.ToolboxPanelLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ToolboxPanelLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ToolboxPanelLabel.ForeColor = System.Drawing.Color.Silver;
+            this.ToolboxPanelLabel.Location = new System.Drawing.Point(0, 0);
+            this.ToolboxPanelLabel.Name = "ToolboxPanelLabel";
+            this.ToolboxPanelLabel.Size = new System.Drawing.Size(56, 17);
+            this.ToolboxPanelLabel.TabIndex = 3;
+            this.ToolboxPanelLabel.Text = "Toolbox";
+            // 
             // ComponentListPanel
             // 
             this.ComponentListPanel.BackColor = System.Drawing.Color.LightBlue;
             this.ComponentListPanel.Controls.Add(this.ComponentList);
             this.ComponentListPanel.Controls.Add(this.ComponentPanelLabel);
             this.ComponentListPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ComponentListPanel.Location = new System.Drawing.Point(0, 237);
+            this.ComponentListPanel.Location = new System.Drawing.Point(0, 233);
             this.ComponentListPanel.Name = "ComponentListPanel";
-            this.ComponentListPanel.Size = new System.Drawing.Size(114, 186);
+            this.ComponentListPanel.Size = new System.Drawing.Size(114, 190);
             this.ComponentListPanel.TabIndex = 1;
             // 
-            // ToolboxPanel
+            // ComponentList
             // 
-            this.ToolboxPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ToolboxPanel.Location = new System.Drawing.Point(0, 0);
-            this.ToolboxPanel.Name = "ToolboxPanel";
-            this.ToolboxPanel.Size = new System.Drawing.Size(114, 237);
-            this.ToolboxPanel.TabIndex = 0;
+            this.ComponentList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ComponentList.HideSelection = false;
+            this.ComponentList.Location = new System.Drawing.Point(0, 17);
+            this.ComponentList.Name = "ComponentList";
+            this.ComponentList.Size = new System.Drawing.Size(114, 173);
+            this.ComponentList.TabIndex = 1;
+            this.ComponentList.UseCompatibleStateImageBehavior = false;
+            // 
+            // ComponentPanelLabel
+            // 
+            this.ComponentPanelLabel.AutoSize = true;
+            this.ComponentPanelLabel.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ComponentPanelLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComponentPanelLabel.ForeColor = System.Drawing.Color.Silver;
+            this.ComponentPanelLabel.Location = new System.Drawing.Point(0, 0);
+            this.ComponentPanelLabel.Name = "ComponentPanelLabel";
+            this.ComponentPanelLabel.Size = new System.Drawing.Size(80, 17);
+            this.ComponentPanelLabel.TabIndex = 0;
+            this.ComponentPanelLabel.Text = "Component";
             // 
             // PropertiesPanel
             // 
@@ -338,7 +443,7 @@ namespace ProWebBuilder
             this.ProjectExplorerTab.Location = new System.Drawing.Point(4, 22);
             this.ProjectExplorerTab.Name = "ProjectExplorerTab";
             this.ProjectExplorerTab.Padding = new System.Windows.Forms.Padding(3);
-            this.ProjectExplorerTab.Size = new System.Drawing.Size(131, 399);
+            this.ProjectExplorerTab.Size = new System.Drawing.Size(129, 397);
             this.ProjectExplorerTab.TabIndex = 1;
             this.ProjectExplorerTab.Text = "Project Explorer";
             this.ProjectExplorerTab.UseVisualStyleBackColor = true;
@@ -358,6 +463,7 @@ namespace ProWebBuilder
             this.DesignAndCodeTab.Controls.Add(this.DesignTab);
             this.DesignAndCodeTab.Controls.Add(this.CodeTab);
             this.DesignAndCodeTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DesignAndCodeTab.DrawMode = System.Windows.Forms.TabDrawMode.OwnerDrawFixed;
             this.DesignAndCodeTab.Location = new System.Drawing.Point(0, 0);
             this.DesignAndCodeTab.Name = "DesignAndCodeTab";
             this.DesignAndCodeTab.SelectedIndex = 0;
@@ -411,42 +517,6 @@ namespace ProWebBuilder
             this.PropertiesSplitter.TabIndex = 6;
             this.PropertiesSplitter.TabStop = false;
             // 
-            // ComponentPanelLabel
-            // 
-            this.ComponentPanelLabel.AutoSize = true;
-            this.ComponentPanelLabel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.ComponentPanelLabel.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ComponentPanelLabel.Location = new System.Drawing.Point(0, 0);
-            this.ComponentPanelLabel.Name = "ComponentPanelLabel";
-            this.ComponentPanelLabel.Size = new System.Drawing.Size(80, 17);
-            this.ComponentPanelLabel.TabIndex = 0;
-            this.ComponentPanelLabel.Text = "Component";
-            // 
-            // ComponentList
-            // 
-            this.ComponentList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ComponentList.HideSelection = false;
-            this.ComponentList.Location = new System.Drawing.Point(0, 17);
-            this.ComponentList.Name = "ComponentList";
-            this.ComponentList.Size = new System.Drawing.Size(114, 169);
-            this.ComponentList.TabIndex = 1;
-            this.ComponentList.UseCompatibleStateImageBehavior = false;
-            // 
-            // NewFileToolbarButton
-            // 
-            this.NewFileToolbarButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.NewFileToolbarButton.Image = ((System.Drawing.Image)(resources.GetObject("NewFileToolbarButton.Image")));
-            this.NewFileToolbarButton.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.NewFileToolbarButton.Name = "NewFileToolbarButton";
-            this.NewFileToolbarButton.Size = new System.Drawing.Size(23, 22);
-            this.NewFileToolbarButton.Text = "New File";
-            // 
-            // NewFileSubMenuItem
-            // 
-            this.NewFileSubMenuItem.Name = "NewFileSubMenuItem";
-            this.NewFileSubMenuItem.Size = new System.Drawing.Size(197, 22);
-            this.NewFileSubMenuItem.Text = "File";
-            // 
             // ProWebBuilder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -459,7 +529,9 @@ namespace ProWebBuilder
             this.Controls.Add(this.ToolboxAndObjectPanel);
             this.Controls.Add(this.ToolbarPanel);
             this.Controls.Add(this.Menubar);
+            this.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.IsMdiContainer = true;
             this.MainMenuStrip = this.Menubar;
             this.Name = "ProWebBuilder";
             this.Text = "ProWebBuilder";
@@ -470,6 +542,8 @@ namespace ProWebBuilder
             this.Toolbar.ResumeLayout(false);
             this.Toolbar.PerformLayout();
             this.ToolboxAndObjectPanel.ResumeLayout(false);
+            this.ToolboxPanel.ResumeLayout(false);
+            this.ToolboxPanel.PerformLayout();
             this.ComponentListPanel.ResumeLayout(false);
             this.ComponentListPanel.PerformLayout();
             this.PropertiesPanel.ResumeLayout(false);
@@ -483,8 +557,6 @@ namespace ProWebBuilder
         }
 
         #endregion
-
-        private System.Windows.Forms.MenuStrip Menubar;
         private System.Windows.Forms.Panel ToolbarPanel;
         private System.Windows.Forms.ToolStrip Toolbar;
         private System.Windows.Forms.ToolStripMenuItem FileMenuItem;
@@ -492,7 +564,6 @@ namespace ProWebBuilder
         private System.Windows.Forms.Panel ToolboxAndObjectPanel;
         private System.Windows.Forms.Panel PropertiesPanel;
         private System.Windows.Forms.Panel DesignAreaPanel;
-        private System.Windows.Forms.TabControl DesignAndCodeTab;
         private System.Windows.Forms.TabPage DesignTab;
         private System.Windows.Forms.TabPage CodeTab;
         private System.Windows.Forms.TabControl PropertiesAndExplorerTab;
@@ -504,10 +575,7 @@ namespace ProWebBuilder
         private System.Windows.Forms.ToolStripMenuItem NewCSSFileSubMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NewHTMLFileSubMenuItem;
         private System.Windows.Forms.ToolStripMenuItem NewProjectFileSubMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem OpenSubMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem OpenProjectSubMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.ToolStripMenuItem SaveSubMenuItem;
         private System.Windows.Forms.ToolStripMenuItem SaveAsSubMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CutSubMenuItem;
         private System.Windows.Forms.ToolStripMenuItem CopySubMenuItem;
@@ -524,8 +592,20 @@ namespace ProWebBuilder
         private System.Windows.Forms.Panel ComponentListPanel;
         private System.Windows.Forms.ListView ComponentList;
         private System.Windows.Forms.Label ComponentPanelLabel;
-        private System.Windows.Forms.ToolStripButton NewFileToolbarButton;
+        private System.Windows.Forms.ToolStripButton OpenToolbarButton;
         private System.Windows.Forms.ToolStripMenuItem NewFileSubMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripMenuItem ExitSubMenuItem;
+        private System.Windows.Forms.Splitter ToolboxAndComponentSplitter;
+        private System.Windows.Forms.ListView ToolboxList;
+        private System.Windows.Forms.Label ToolboxPanelLabel;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        public System.Windows.Forms.TabControl DesignAndCodeTab;
+        public System.Windows.Forms.OpenFileDialog OpenDialog;
+        public System.Windows.Forms.MenuStrip Menubar;
+        public System.Windows.Forms.ToolStripMenuItem OpenSubMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem OpenProjectSubMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem SaveSubMenuItem;
     }
 }
 

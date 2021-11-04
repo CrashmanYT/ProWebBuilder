@@ -33,7 +33,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="ProWebBuilder.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,20 +59,16 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UIStyle.cs" />
+    <Compile Include="src\PWBEvent.cs" />
+    <Compile Include="src\UIStyle.cs" />
     <EmbeddedResource Include="ProWebBuilder.resx">
       <DependentUpon>ProWebBuilder.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +81,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\newFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\openFile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newProject.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\newFile1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="src\font\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
